@@ -2,8 +2,14 @@ import pigpio
 import time
 
 pi = pigpio.pi()
-pi.set_PWM_dutycycle(17, 225)
 
-time.sleep(25)
+i = 0
 
-pi.close()
+while i < 225:
+    pi.set_PWM_dutycycle(17, i)
+    pi.set_PWM_dutycycle(22, i)
+    pi.set_PWM_dutycycle(24, i)
+    i++
+    time.sleep(1)
+
+pi.stop()
