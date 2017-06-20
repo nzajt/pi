@@ -9,7 +9,7 @@ while i < 225:
     pi.set_PWM_dutycycle(17, i)
     pi.set_PWM_dutycycle(22, i)
     pi.set_PWM_dutycycle(24, i)
-    i++
+    i += 1
     time.sleep(1)
 
 pi.stop()
