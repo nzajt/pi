@@ -10,7 +10,7 @@ def light_it_up(i):
     pi.set_PWM_dutycycle(22, i)
     pi.set_PWM_dutycycle(24, i)
 
-while true:
+while True:
     i += 25
     light_it_up(i)
     print i
