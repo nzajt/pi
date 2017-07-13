@@ -11,7 +11,7 @@ def light_it_up(i):
     pi.set_PWM_dutycycle(24, i)
 
 while i < 225:
-    i += 1
+    i += 25
     light_it_up(i)
     print i
     time.sleep(1)
