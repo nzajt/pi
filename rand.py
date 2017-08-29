@@ -6,7 +6,7 @@ pi = pigpio.pi()
 
 i = 0
 
-def light_it_up:
+def light_it_up():
     for pin in [17, 22, 24]:
         pi.set_PWM_dutycycle(pin, random.randrange(225))
 
