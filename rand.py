@@ -1,12 +1,14 @@
 import pigpio
 import random
 import time
+import threading
 
 class RandomPig:
     def __init__(self, pin):
         self.pi = pigpio.pi()
         self.pin = pin
         self.old_value = 0
+        self.star_loop()
 
     def update_value(self, new_value):
         print(new_value, self.old_value)
@@ -31,8 +33,10 @@ class RandomPig:
             sleep_time = self.update_value(new_value)
             time.sleep(sleep_time)
 
-for pin in [17, 22, 24]:
+def start_rand(pin):
     randp = RandomPig(pin)
-    randp.star_loop()
 
-pi.stop()
+for pin in [17, 22, 24]:
+    t = threading.Thread(target=start_rand, pin)
+    t.deamon = true
+    t.start()
