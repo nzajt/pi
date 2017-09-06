@@ -1,7 +1,6 @@
 import pigpio
 import random
 import time
-import threading
 
 class RandomPig:
     def __init__(self, pin):
