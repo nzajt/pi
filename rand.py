@@ -8,9 +8,9 @@ class RandomPig:
         self.pi = pigpio.pi()
         self.pin = pin
         self.old_value = self.rand()
-        self.star_loop()
 
-    def update_value(self, new_value):
+    def update_value(self):
+        new_value = self.rand()
         diff = new_value - self.old_value
         current_value = self.old_value
         for i in range(abs(diff)):
@@ -20,23 +20,20 @@ class RandomPig:
             else: # it's negative
                 current_value = current_value - 1
                 self.set_pin(current_value)
-            time.sleep(5)
+            time.sleep(1)
         self.old_value = new_value
 
     def set_pin(self, value):
         print('Pin %s at value %d' %(self.pin, value))
         self.pi.set_PWM_dutycycle(self.pin, value)
 
-    def star_loop(self):
-        while True:
-            new_value = self.rand()
-            sleep_time = self.update_value(new_value)
-
     def rand(self):
         return random.randrange(225)
 
 def start_rand(pin):
     randp = RandomPig(pin)
+    randp.update_value()
 
-for pin in [17, 22, 24]:
-    start_rand(pin)
+while True:
+    for pin in [17, 22, 24]:
+        randp = start_rand(pin)
