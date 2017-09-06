@@ -32,7 +32,7 @@ class RandomPig:
             new_value = self.rand()
             sleep_time = self.update_value(new_value)
 
-    def rand():
+    def rand(self):
         return random.randrange(225)
 
 def start_rand(pin):
