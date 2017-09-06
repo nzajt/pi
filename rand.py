@@ -19,7 +19,7 @@ class RandomPig:
             else: # it's negative
                 current_value = current_value - 1
                 self.set_pin(current_value)
-            time.sleep(1)
+            time.sleep(0.25)
         self.old_value = new_value
 
     def set_pin(self, value):
