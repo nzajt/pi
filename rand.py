@@ -37,6 +37,6 @@ def start_rand(pin):
     randp = RandomPig(pin)
 
 for pin in [17, 22, 24]:
-    t = threading.Thread(target=start_rand, pin)
+    t = threading.Thread(target=start_rand, args=(pin,))
     t.deamon = true
     t.start()
