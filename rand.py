@@ -5,7 +5,7 @@ import time
 class RandomPig:
     def __init__(self, pin):
         self.pi = pigpio.pi()
-        self.pin = _pin
+        self.pin = pin
         self.old_value = 0
 
     def update_value(self, new_value):
