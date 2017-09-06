@@ -9,6 +9,7 @@ class RandomPig:
         self.old_value = 0
 
     def update_value(self, new_value):
+        print(new_value, self.old_value)
         diff = self.old_value - new_value
         for i in range(abs(diff)):
             if diff > 0: # it's positive
