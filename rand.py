@@ -10,7 +10,7 @@ class RandomPig:
 
     def update_value(self, new_value):
         print(new_value, self.old_value)
-        diff = self.old_value - new_value
+        diff = new_value - self.old_value
         for i in range(abs(diff)):
             if diff > 0: # it's positive
                 self.set_pin(self.old_value + i)
