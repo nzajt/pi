@@ -7,7 +7,7 @@ class RandomPig:
     def __init__(self, pin):
         self.pi = pigpio.pi()
         self.pin = pin
-        self.old_value = 0
+        self.old_value = self.rand()
         self.star_loop()
 
     def update_value(self, new_value):
@@ -20,7 +20,7 @@ class RandomPig:
             else: # it's negative
                 current_value = current_value - 1
                 self.set_pin(current_value)
-            time.sleep(1)
+            time.sleep(5)
         self.old_value = new_value
 
     def set_pin(self, value):
@@ -29,8 +29,11 @@ class RandomPig:
 
     def star_loop(self):
         while True:
-            new_value = random.randrange(225)
+            new_value = self.rand()
             sleep_time = self.update_value(new_value)
+
+    def rand():
+        return random.randrange(225)
 
 def start_rand(pin):
     randp = RandomPig(pin)
