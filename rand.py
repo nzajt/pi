@@ -30,10 +30,21 @@ class RandomPig:
     def rand(self):
         return random.randrange(225)
 
+    def stop():
+        self.pi.stop()
+
+pins = list()
+
 def start_rand(pin):
     randp = RandomPig(pin)
     randp.update_value()
+    return randp
 
 while True:
     for pin in [17, 22, 24]:
         randp = start_rand(pin)
+        pins.append(randp)
+
+# Stop on kill
+for pin in pins:
+    pin.stop()
