@@ -14,7 +14,8 @@ class RandomPig:
             if diff > 0: # it's positive
                 self.set_pin(self.old_value + i)
             else: # it's negative
-                self.set_pin(self.old_value - i
+                self.set_pin(self.old_value - i)
+
         time.sleep(1)
         self.old_value = new_value
         return abs(diff)
