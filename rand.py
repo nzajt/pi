@@ -27,7 +27,7 @@ class RandomPig:
         self.pi.set_PWM_dutycycle(self.pin, value)
 
     def rand(self):
-        return random.randrange(225)
+        return random.randrange(255)
 
     def stop():
         self.pi.stop()
