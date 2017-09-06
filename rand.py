@@ -1,5 +1,6 @@
 import pigpio
 import random
+import time
 
 pi = pigpio.pi()
 
