@@ -1,9 +1,7 @@
-#!/bin/bash
+#!/bin/zsh
 PIPID=$(ps aux | grep python | awk '{print $2}')
-echo $PIPID 
-kill -9 $PIPID
+kill -9 $PIPID >/dev/null 2>&1
 PORTS=(17 22 24)
 for port in $PORTS; do
-  echo $port
   pigs p $port 0
 done
