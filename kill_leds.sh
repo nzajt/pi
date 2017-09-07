@@ -1,5 +1,5 @@
 #!/bin/bash
-PIPID=ps aux | grep python | awk '{print $2}'
+PIPID=$(ps aux | grep python | awk '{print $2}')
 echo $PIPID 
 kill -9 $PIPID
 ports=( 17, 22, 24 )
